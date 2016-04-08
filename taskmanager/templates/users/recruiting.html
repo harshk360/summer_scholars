@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Welcome {{ session.username }}</h1>
+    <h4>Want to List a New Event? Click <a href="/users/recruiting/create">here</a></h4>
+    <h4>Click on an event to volunteer, Click again to deregister as a volunteer</h4>
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Volunteers</th>
+        <tr>
+    </thead>
+    <tbody>
+        {% for event in events %}
+        <tr>
+            <td><a href="/users/recruiting/volunteer/{{ event.id }}">{{ event.title }}</a></td>
+            <td>{{ event.date }}</td>
+            <td>{{ event.time }}</td>
+            {% if (event.volunteer_list) %}
+                <td bgcolor="#00FF00">
+                {% for volunteer in event.volunteer_list %}
+                    {{volunteer}}
+                    {% if not loop.last %}
+                        ,
+                    {% endif %}
+                {% endfor %}
+                </td>
+            {% else %}
+                <td bgcolor="#FF0000">None</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+

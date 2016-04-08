@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-narrow">
+  <h1>Create a New Recruiting Event</h1>
+    <br/>
+    <form id="CreateEventForm" class="form" method="POST" action="" role="form">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+            <div class="form-group">
+                {{form.title.label}}
+                {{form.title(placeholder="Title", class_="form-control")}}
+            </div>
+            <div class="form-group">
+                {{form.date.label}}
+                {{form.date(placeholder="Date", class_="form-control")}}
+            </div>
+        <div class="form-group">
+                {{form.time.label}}
+                {{form.time(placeholder="Time", class_="form-control")}}
+            </div>
+            <p><input class="btn btn-default btn-submit" type="submit" value="Create"></p>
+    </form>
+{% for field in form.errors %}
+{% for error in form.errors[field] %}
+    <div class="alert alert-error">
+        <strong>Error!</strong> {{field}} {{error}}
+    </div>
+{% endfor %}
+{% endfor %}
+
+</div>
+{% endblock %}
