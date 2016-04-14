@@ -22,7 +22,7 @@ class ProdConfig(Config):
 
     ENV = 'prod'
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'postgresql://localhost/summer_scholars'
+    SQLALCHEMY_DATABASE_URI = 'postgresql:///summer_scholars'
     DEBUG_TB_ENABLED = False  # Disable Debug toolbar
 
 
