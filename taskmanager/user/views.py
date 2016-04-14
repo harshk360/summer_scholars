@@ -37,7 +37,8 @@ def create():
     print ("form received")
     if form.validate_on_submit():
         print ("valid")
-        RecEvent.create(title=form.title.data, date=form.date.data, time=form.time.data)
+        RecEvent.create(title=form.title.data, date=form.date.data, time=form.time.data,
+                        location=form.location.data, contact_person=form.contact_person.data,)
         flash('You have successfully created a new recruiting event.', 'success')
         return redirect(url_for('user.recruiting'))
     else:

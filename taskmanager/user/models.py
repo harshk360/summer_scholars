@@ -89,9 +89,9 @@ class RecEvent(UserMixin, SurrogatePK, Model):
     volunteers = db.relationship(User, secondary=volunteers, lazy='dynamic', backref=db.backref('RecEvent', lazy='dynamic'))
 
 
-    def __init__(self, title, date, time, **kwargs):
+    def __init__(self, title, date, time, location, contact_person, **kwargs):
         """Create instance."""
-        db.Model.__init__(self, title=title, date=date, time=time, **kwargs)
+        db.Model.__init__(self, title=title, date=date, time=time, location=location, contact_person=contact_person, **kwargs)
 
     @property
     def title_date(self):
