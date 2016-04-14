@@ -22,8 +22,8 @@
             <td>{{ event.date }}</td>
             <td>{{ event.time }}</td>
             <td>{{ event.location }}</td>
-            <td>{{ event.time }}</td>
-            {% if (event.contact_person) %}
+            <td>{{ event.contact_person }}</td>
+            {% if (event.volunteers) %}
                 <td bgcolor="#00FF00">
                 {% for volunteer in event.volunteer_list %}
                     {{volunteer}}
