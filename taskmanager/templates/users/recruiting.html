@@ -19,7 +19,9 @@
             <td><a href="/users/recruiting/volunteer/{{ event.id }}">{{ event.title }}</a></td>
             <td>{{ event.date }}</td>
             <td>{{ event.time }}</td>
-            {% if (event.volunteer_list) %}
+            <td>{{ event.location }}</td>
+            <td>{{ event.time }}</td>
+            {% if (event.contact_person) %}
                 <td bgcolor="#00FF00">
                 {% for volunteer in event.volunteer_list %}
                     {{volunteer}}

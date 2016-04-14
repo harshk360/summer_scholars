@@ -51,4 +51,6 @@ class CreateEventForm(Form):
     title = StringField('Event Title', validators=[DataRequired(), Length(min=3, max=80)])
     date = DateField('Date')
     time = TimeField('Time')
+    location = StringField('Event Location', validators=[Length(min=0, max=80)])
+    contact_person = StringField('Contact Person', validators=[Length(min=0, max=80)])
 

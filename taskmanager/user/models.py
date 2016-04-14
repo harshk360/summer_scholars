@@ -84,6 +84,8 @@ class RecEvent(UserMixin, SurrogatePK, Model):
     title = Column(db.String(80), unique=False, nullable=False)
     date = Column(db.Date, nullable=True)
     time = Column(db.Time, nullable=True)
+    location = Column(db.String(80), unique=False, nullable=True)
+    contact_person = Column(db.String(80), unique=False, nullable=True)
     volunteers = db.relationship(User, secondary=volunteers, lazy='dynamic', backref=db.backref('RecEvent', lazy='dynamic'))
 
 
