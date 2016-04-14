@@ -21,9 +21,9 @@ class ProdConfig(Config):
     """Production configuration."""
 
     ENV = 'prod'
-    DEBUG = True
+    DEBUG = False
     SQLALCHEMY_DATABASE_URI = 'postgresql:///summer_scholars'
-    DEBUG_TB_ENABLED = True  # Disable Debug toolbar
+    DEBUG_TB_ENABLED = False  # Disable Debug toolbar
 
 
 class DevConfig(Config):
